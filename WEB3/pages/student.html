@@ -1,0 +1,222 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <style>
+      /* ---- HEADER LAYOUT ---- */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 40px;
+      }
+
+      .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+        width: 60%;
+      }
+
+      .nav-links > div:first-child {
+        display: flex;
+        justify-content: center;
+        flex: 1;
+        gap: 25px;
+      }
+
+      .nav-links > div:last-child {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      /* ---- MAIN CONTENT ---- */
+      main {
+        padding: 40px 80px;
+      }
+
+      h1, h2, h3 {
+        text-align: center;
+      }
+
+      .dashboard-grid, 
+      .recommendations, 
+      .guidance-resources {
+        margin-top: 40px;
+        text-align: center;
+      }
+
+      /* ---- CARD LAYOUT ---- */
+      .grid-layout {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-top: 20px;
+      }
+
+      .grid-3-col {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-top: 20px;
+      }
+
+      .card-form, .article-card {
+        width: 300px;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        text-align: left;
+      }
+
+      .card-content {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      /* ---- FOOTER ---- */
+      .footer {
+        margin-top: 60px;
+        padding: 20px 0;
+        text-align: center;
+      }
+
+      .footer-social {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="site-wrapper">
+      <div class="main-layout">
+        <header>
+          <div class="logo-container">
+            [Icon Placeholder]
+            <h2 class="logo-text">Career Connect Hub</h2>
+          </div>
+
+          <div class="nav-links">
+            <div>
+              <a href="home.html">Home</a>
+              <a href="jobs.html">Jobs</a>
+              <a href="internship.html">Internships</a>
+              <a href="career tips.html">Tips</a>
+              <a href="cv.html">CV</a>
+            </div>
+            <div>
+              <a href="student.html">[Icon Placeholder]</a>
+            </div>
+          </div>
+        </header>
+
+        <main class="page-content-wrapper">
+          <h1 class="text-3xl font-bold mb-8">Welcome Back, Student!</h1>
+
+          <section class="dashboard-grid">
+            <div class="grid-layout">
+              <div class="card-form">
+                <h2>Applied Jobs (5)</h2>
+                <p class="text-medium">You have 5 active job applications. Keep track of their status.</p>
+                <a href="#" class="btn btn-secondary">View Applications</a>
+              </div>
+
+              <div class="card-form">
+                <h2>Interview Invites (2)</h2>
+                <p class="text-medium">Prepare for your interviews with our resources.</p>
+                <a href="interview.html" class="btn btn-primary">Prep Now</a>
+              </div>
+
+              <div class="card-form">
+                <h2>Profile Completion (75%)</h2>
+                <p class="text-medium">Update your profile to unlock more opportunities.</p>
+                <a href="#" class="btn btn-secondary">Update Profile</a>
+              </div>
+            </div>
+          </section>
+
+          <section class="recommendations">
+            <h2>Recommended Opportunities</h2>
+            <div class="grid-3-col">
+              <div class="article-card">
+                <div class="card-content">
+                  <h3>Junior Software Engineer</h3>
+                  <p class="text-medium">Acme Tech Solutions</p>
+                  <p>Full-time job opening for final year students or new graduates.</p>
+                  <a href="#" class="btn btn-secondary">View Job</a>
+                </div>
+              </div>
+
+              <div class="article-card">
+                <div class="card-content">
+                  <h3>Marketing Intern</h3>
+                  <p class="text-medium">Global Brands Inc.</p>
+                  <p>Summer internship for marketing and business students.</p>
+                  <a href="#" class="btn btn-secondary">View Internship</a>
+                </div>
+              </div>
+
+              <div class="article-card">
+                <div class="card-content">
+                  <h3>Financial Analyst Trainee</h3>
+                  <p class="text-medium">Wall Street Bank</p>
+                  <p>One-year trainee program for finance majors.</p>
+                  <a href="#" class="btn btn-secondary">View Trainee Program</a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="guidance-resources">
+            <h2>Career Guidance</h2>
+            <div class="grid-layout">
+              <div class="card-form">
+                <h3>CV Review Service</h3>
+                <p class="text-medium">Upload your CV and get professional feedback within 48 hours.</p>
+                <a href="cv.html" class="btn btn-primary">Review CV</a>
+              </div>
+
+              <div class="card-form">
+                <h3>Interview Simulations</h3>
+                <p class="text-medium">Practice common interview scenarios with our AI-powered tool.</p>
+                <a href="interview.html" class="btn btn-primary">Start Practice</a>
+              </div>
+            </div>
+          </section>
+        </main>
+
+        <footer class="footer">
+          <div class="page-content-wrapper footer-content">
+            <p>© 2025 Career Connect Hub. All rights reserved.</p>
+            <div class="footer-social">
+              <a href="#">[Icon Placeholder]</a>
+              <a href="#">[Icon Placeholder]</a>
+              <a href="#">[Icon Placeholder]</a>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

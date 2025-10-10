@@ -1,0 +1,345 @@
+/* --- 1. CSS Variables for Consistency (Modern Light-Dark Balance) --- */
+:root {
+    --linkedin-blue: #0a66c2;       /* Primary Action Color (LinkedIn Blue) */
+    --primary-hover: #004182;
+    --background-color: #2f343d;    /* Light-Medium Grey (Body Background) */
+    --card-background: #3a3f47;     /* Slightly darker for contrast (Cards, Header, Footer) */
+    --text-dark: rgba(255, 255, 255, 0.92); /* Bright white text */
+    --text-medium: rgba(255, 255, 255, 0.7); /* Softer white text */
+    --border-color: #474d57;        /* Subtle grey border/divider */
+    --font-family: -apple-system, BlinkMacMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+}
+
+/* --- 2. Base & Typography --- */
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-dark);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+h1, h2, h3, h4 {
+    color: var(--text-dark);
+    line-height: 1.25;
+    margin-top: 0;
+}
+
+a {
+    color: var(--linkedin-blue);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+/* --- 3. Full-Page Layouts --- */
+.site-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex-grow: 1; /* Ensures content pushes the footer down */
+}
+
+/* Wide Page Content */
+.page-content-wrapper {
+    max-width: 1128px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Centered Containers (For Login/Signup Pages) */
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Card Forms */
+.card-form {
+    background: var(--card-background);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    padding: 24px 32px;
+    width: 100%;
+    max-width: 400px; /* Kept max-width for forms like Login/CV upload */
+}
+
+/* --- 4. Header & Navigation (Tightened Structure) --- */
+header {
+    background-color: var(--card-background);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    padding: 0; /* Ensures the header itself is tight */
+}
+
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Reduced vertical padding to address "oversized" feel */
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.logo h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-left: 20px;
+}
+.nav-links a {
+    color: var(--text-medium);
+    font-size: 1rem;
+    padding: 5px 0;
+}
+.nav-links a:hover {
+    color: var(--text-dark);
+    text-decoration: none;
+}
+
+.header-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* --- 5. Inputs & Buttons (User-Defined) --- */
+input, select, textarea {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: var(--text-dark);
+    background-color: #444b55; /* Slightly lighter input background */
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--linkedin-blue);
+    box-shadow: 0 0 0 1px var(--linkedin-blue);
+    outline: none;
+}
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 24px; /* Pill shape */
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+    box-sizing: border-box;
+}
+
+/* Primary Button */
+.btn-primary {
+    background-color: var(--linkedin-blue);
+    color: #ffffff;
+}
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Secondary Button */
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid var(--linkedin-blue);
+    color: var(--linkedin-blue);
+}
+.btn-secondary:hover {
+    background-color: rgba(10, 102, 194, 0.1);
+    color: #ffffff;
+}
+
+/* --- 6. Article Cards & Components --- */
+.article-card {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.article-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px); /* Subtle lift on hover */
+}
+
+.article-card-image {
+    width: 100%;
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+}
+
+.article-card-content {
+    padding: 16px;
+}
+
+.article-card-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.article-card-tag {
+    font-size: 12px;
+    color: var(--linkedin-blue);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    display: block;
+}
+
+/* --- 7. Responsive Grid Structures --- */
+
+.grid-3-col {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+@media (min-width: 768px) {
+    .grid-3-col {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 40px 0;
+    text-align: center;
+}
+.hero-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #444b55;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+.search-bar input {
+    flex-grow: 1;
+    border: none;
+    background: transparent;
+    margin-bottom: 0;
+}
+.search-bar .btn {
+    width: auto;
+    border-radius: 0;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-left: 1px solid var(--border-color);
+}
+
+/* Job/Internship Page Layout (Filter | List | Details) */
+.job-listing-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr; /* Default to single column */
+}
+
+@media (min-width: 1024px) {
+    .job-listing-grid {
+        /* Filter (250px) | List (1fr) | Details (350px) */
+        grid-template-columns: 250px 1fr 350px;
+    }
+}
+
+.filters-panel,
+.job-details-panel {
+    background-color: var(--card-background);
+    padding: 20px;
+    border-radius: 8px;
+}
+.job-details-panel {
+    position: sticky;
+    top: 70px; /* Stays below the header */
+    height: calc(100vh - 90px); /* Height minus header and padding */
+    overflow-y: auto;
+}
+
+.job-card {
+    background-color: var(--card-background);
+    padding: 15px;
+    border-radius: 4px;
+    border-left: 3px solid transparent;
+    cursor: pointer;
+    transition: background-color 0.2s, border-left 0.2s;
+    margin-bottom: 10px;
+}
+.job-card:hover, .job-card.active {
+    background-color: #444b55;
+    border-left-color: var(--linkedin-blue);
+}
+
+/* --- 8. Footer --- */
+.footer {
+    border-top: 1px solid var(--border-color);
+    background-color: var(--card-background);
+    margin-top: 40px;
+    padding: 20px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-content p {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.footer-social {
+    display: flex;
+    gap: 20px;
+}
+.footer-social a {
+    color: var(--text-medium);
+    font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+    .footer-content {
+        flex-direction: row;
+        margin-top: 0;
+    }
+}

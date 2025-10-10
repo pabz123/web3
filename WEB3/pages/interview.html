@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Interview Prep Guide</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <style>
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px 0;
+        }
+        .article-image {
+            width: 100%;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .article-content h2, .article-content h3 {
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        .check-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        .check-list li {
+            background-color: var(--card-background);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        .check-icon {
+            color: var(--linkedin-blue);
+            font-size: 24px;
+            line-height: 1;
+        }
+        /* Custom checkmark icon using CSS content property */
+        .check-icon::before {
+            content: "✓";
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    
+    <header style="border-bottom: 1px solid var(--border-color);">
+        <div class="page-content-wrapper" style="display: flex; justify-content: space-between; align-items: center; padding-top: 15px; padding-bottom: 15px;">
+            <div style="font-size: 20px; font-weight: 700; color: var(--linkedin-blue);">Career Connect Hub</div>
+            <nav style="display: flex; gap: 25px;">
+                <a href="jobs.html">Jobs</a>
+                <a href="interview.html" style="color: var(--linkedin-blue); font-weight: 600;">Interview Prep</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-content-wrapper">
+        <div class="article-container">
+            <h1 style="font-size: 32px; margin-bottom: 10px;">Mastering the Video Interview</h1>
+            <p class="text-medium" style="font-size: 16px; margin-bottom: 30px;">A comprehensive guide to standing out in virtual job interviews.</p>
+            
+            <div class="article-image" style='background-image: url("https://via.placeholder.com/800x300?text=Video+Interview+Setup");'></div>
+
+            <div class="article-content">
+                <section>
+                    <h2>Prepare Your Environment</h2>
+                    <p class="text-medium">The video interview starts long before you answer the first question. Your background, lighting, and sound quality create your first impression.</p>
+
+                    <h3 style="margin-top: 20px;">Technical Checklist</h3>
+                    <ul class="check-list">
+                        <li>
+                            <span class="check-icon"></span>
+                            <p>Test your camera and microphone audio levels.</p>
+                        </li>
+                        <li>
+                            <span class="check-icon"></span>
+                            <p>Ensure your internet connection is stable and fast.</p>
+                        </li>
+                        <li>
+                            <span class="check-icon"></span>
+                            <p>Charge your computer and have a charger nearby.</p>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Presentation Tips</h2>
+                    <p class="text-medium">Just as in-person, visual presence matters. Pay attention to your frame and posture.</p>
+
+                    <h3 style="margin-top: 20px;">Visual Guidelines</h3>
+                    <ul class="check-list">
+                        <li>
+                            <span class="check-icon"></span>
+                            <p>Choose a quiet space with a clean, uncluttered background.</p>
+                        </li>
+                        <li>
+                            <span class="check-icon"></span>
+                            <p>Ensure your face is well-lit, preferably with light coming from in front of you.</p>
+                        </li>
+                        <li>
+                            <span class="check-icon"></span>
+                            <p>Maintain eye contact with the camera (not the screen).</p>
+                        </li>
+                        <li>
+                            <span class="check-icon"></span>
+                            <p>Minimize distractions.</p>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <footer style="text-align: center; padding: 20px 0; border-top: 1px solid var(--border-color); margin-top: 30px;">
+        <p class="text-medium" style="font-size: 12px;">© 2025 Career Connect Hub. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

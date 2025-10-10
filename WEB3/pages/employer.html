@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Career Connect Hub - Employer Dashboard</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <style>
+        /* Specific Employer Dashboard Styles */
+        .dashboard-header {
+            padding: 30px 0;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+        .candidate-card {
+            background-color: var(--card-background);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .candidate-info {
+            flex-grow: 1;
+        }
+        .candidate-avatar {
+            min-width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: var(--text-medium);
+            font-weight: 700;
+        }
+        .card-actions {
+            display: flex;
+            gap: 10px;
+        }
+        .card-actions .btn {
+            padding: 8px 15px;
+            width: auto;
+            font-size: 14px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <header style="border-bottom: 1px solid var(--border-color);">
+        <div class="page-content-wrapper" style="display: flex; justify-content: space-between; align-items: center; padding-top: 15px; padding-bottom: 15px;">
+            <div style="font-size: 20px; font-weight: 700; color: var(--linkedin-blue);">Career Connect Hub</div>
+            <nav style="display: flex; gap: 25px;">
+                <a href="jobs.html">Job Listings</a>
+                <a href="employer.html" style="color: var(--linkedin-blue); font-weight: 600;">Candidates</a>
+            </nav>
+            <button class="btn btn-primary" style="width: auto; padding: 8px 15px;">Post a New Job</button>
+        </div>
+    </header>
+
+    <main class="page-content-wrapper">
+        <div class="dashboard-header">
+            <h1>Candidate Applications</h1>
+            <p class="text-medium">Showing 12 candidates for "Senior Software Engineer"</p>
+        </div>
+
+        <section id="candidateList">
+            <div class="candidate-card" data-candidate-id="1">
+                <div class="candidate-avatar">JD</div>
+                <div class="candidate-info">
+                    <h3>Jane Doe</h3>
+                    <p class="text-medium">Applied for: Frontend Developer</p>
+                    <p class="text-medium">Skills: React, JavaScript, UI/UX</p>
+                </div>
+                <div class="card-actions">
+                    <button class="btn btn-secondary download-btn" data-filename="Jane_Doe_CV.pdf">View CV</button>
+                    <button class="btn btn-primary">Schedule Interview</button>
+                </div>
+            </div>
+
+            <div class="candidate-card" data-candidate-id="2">
+                <div class="candidate-avatar">MS</div>
+                <div class="candidate-info">
+                    <h3>Michael Scott</h3>
+                    <p class="text-medium">Applied for: Project Manager</p>
+                    <p class="text-medium">Skills: SCRUM, Budgeting, Leadership</p>
+                </div>
+                <div class="card-actions">
+                    <button class="btn btn-secondary download-btn" data-filename="Michael_Scott_CV.pdf">View CV</button>
+                    <button class="btn btn-primary">Schedule Interview</button>
+                </div>
+            </div>
+            </section>
+
+    </main>
+    
+    <footer style="text-align: center; padding: 20px 0; border-top: 1px solid var(--border-color); margin-top: 30px;">
+        <p class="text-medium" style="font-size: 12px;">© 2025 Career Connect Hub. For Employers.</p>
+    </footer>
+
+    <script>
+        // Simple client-side CV download simulation (keeping the original mock functionality)
+        document.querySelectorAll('.download-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const filename = btn.getAttribute('data-filename');
+                const card = btn.closest('.candidate-card');
+                const name = (card && card.querySelector('h3')) ? card.querySelector('h3').textContent : 'Candidate';
+                const content = name + "\n\nThis is a simulated CV for " + name + ". Replace with a real file in production.";
+                const blob = new Blob([content], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a'); a.href = url; a.download = filename; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+            });
+        });
+    </script>
+</body>
+</html>

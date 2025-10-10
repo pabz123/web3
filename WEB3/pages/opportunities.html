@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Career Connect Hub - Career Opportunities</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <style>
+        /* Specific Job Listing Styles (Reused from jobs.html) */
+        .job-main-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        @media (min-width: 900px) {
+            .job-main-layout {
+                grid-template-columns: 350px 1fr;
+            }
+        }
+        .filter-panel {
+            background-color: var(--card-background);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            height: fit-content;
+        }
+        .filter-group h4 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 5px;
+        }
+        .job-list-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        @media (min-width: 1200px) {
+            .job-list-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .job-list {
+            height: 80vh;
+            overflow-y: auto;
+        }
+        .job-card {
+            padding: 15px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-bottom: 10px;
+        }
+        .job-card:hover {
+            background-color: var(--background-color);
+        }
+        .job-card.active {
+            border: 2px solid var(--linkedin-blue);
+            background-color: var(--background-color);
+        }
+        .job-details-panel {
+            background-color: var(--card-background);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            height: 80vh;
+            overflow-y: auto;
+            position: sticky;
+            top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header style="border-bottom: 1px solid var(--border-color);">
+        <div class="page-content-wrapper" style="display: flex; justify-content: space-between; align-items: center; padding-top: 15px; padding-bottom: 15px;">
+            <div style="font-size: 20px; font-weight: 700; color: var(--linkedin-blue);">Career Connect Hub</div>
+            <nav style="display: flex; gap: 25px;">
+                <a href="jobs.html" style="color: var(--linkedin-blue); font-weight: 600;">Opportunities</a>
+                <a href="internship.html">Internships</a>
+                <a href="employer.html">For Employers</a>
+            </nav>
+            <div style="display: flex; gap: 10px;">
+                <button class="btn btn-secondary" style="width: auto; padding: 8px 15px;">Login</button>
+                <button class="btn btn-primary" style="width: auto; padding: 8px 15px;">Post a Job</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-content-wrapper margin-top-large">
+        <h1>Career Opportunities</h1>
+        <p class="text-medium" style="margin-bottom: 20px;">Explore all job and career advancement opportunities.</p>
+
+        <div class="job-main-layout">
+            <aside class="filter-panel">
+                <div class="filter-group">
+                    <h4>Location</h4>
+                    <input type="text" placeholder="City, State, or Remote"/>
+                </div>
+
+                <div class="filter-group">
+                    <h4>Job Type</h4>
+                    <select>
+                        <option>Full-time</option>
+                        <option>Part-time</option>
+                        <option>Contract</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <h4>Salary Range</h4>
+                    <input type="range" min="30000" max="200000" value="50000" style="padding: 0;"/>
+                </div>
+                
+                <button class="btn btn-primary" style="width: 100%; margin-top: 10px;">Apply Filters</button>
+            </aside>
+            
+            <div class="job-list-container">
+                <div class="job-list">
+                    <div class="article-card job-card active" onclick="showJobDetails('details-opp1', this)">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+                            <h3 class="article-card-title" style="margin: 0;">Lead Product Manager</h3>
+                            <div style="font-size: 14px; color: var(--text-medium);">Full-time</div>
+                        </div>
+                        <p class="text-medium" style="margin-bottom: 5px;">Innovate Solutions Inc.</p>
+                        <p class="text-medium" style="font-size: 14px;">San Francisco, CA</p>
+                        <p class="article-card-tag" style="margin-top: 10px;">Management</p>
+                    </div>
+
+                    <div class="article-card job-card" onclick="showJobDetails('details-opp2', this)">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+                            <h3 class="article-card-title" style="margin: 0;">Financial Controller</h3>
+                            <div style="font-size: 14px; color: var(--text-medium);">Full-time</div>
+                        </div>
+                        <p class="text-medium" style="margin-bottom: 5px;">Apex Finance Group</p>
+                        <p class="text-medium" style="font-size: 14px;">New York, NY (Hybrid)</p>
+                        <p class="article-card-tag" style="margin-top: 10px;">Finance</p>
+                    </div>
+                    
+                    </div>
+                
+                <div class="job-details-panel">
+                    <div id="jobDetails">
+                        <div id="details-opp1">
+                            <h2>Lead Product Manager</h2>
+                            <p class="text-medium" style="margin-bottom: 15px;">Innovate Solutions Inc. · Full-time · San Francisco, CA</p>
+
+                            <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                                <button class="btn btn-primary" style="width: auto; padding: 10px 20px; font-size: 16px;">Apply Now</button>
+                                <button class="btn btn-secondary" style="width: auto; padding: 10px 20px; font-size: 16px;">Save Job</button>
+                            </div>
+                            
+                            <h3>Role Summary</h3>
+                            <p>Drive the strategy and roadmap for our flagship product. This role requires strong leadership, deep market analysis skills, and technical acumen...</p>
+                        </div>
+                        <div id="details-opp2" style="display: none;">
+                            <h2>Financial Controller</h2>
+                            <p class="text-medium" style="margin-bottom: 15px;">Apex Finance Group · Full-time · New York, NY (Hybrid)</p>
+
+                            <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                                <button class="btn btn-primary" style="width: auto; padding: 10px 20px; font-size: 16px;">Apply Now</button>
+                                <button class="btn btn-secondary" style="width: auto; padding: 10px 20px; font-size: 16px;">Save Job</button>
+                            </div>
+                            
+                            <h3>Role Summary</h3>
+                            <p>Oversee all financial operations, including budgeting, forecasting, and compliance. Must be a CPA with 7+ years of experience in corporate finance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer style="text-align: center; padding: 20px 0; border-top: 1px solid var(--border-color); margin-top: 30px;">
+        <p class="text-medium" style="font-size: 12px;">© 2025 Career Connect Hub. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Simple client-side script to switch job details and active card state
+        function showJobDetails(id, cardElement) {
+            document.querySelectorAll('.job-details-panel > div > div').forEach(el => {
+                el.style.display = 'none';
+            });
+            const detailElement = document.getElementById(id);
+            if (detailElement) {
+                detailElement.style.display = 'block';
+            }
+            
+            document.querySelectorAll('.job-card').forEach(c => {
+                c.classList.remove('active');
+            });
+            if (cardElement) {
+                cardElement.classList.add('active');
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            showJobDetails('details-opp1', document.querySelector('.job-card:first-child'));
+        });
+    </script>
+</body>
+</html>

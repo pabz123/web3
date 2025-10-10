@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Career Connect Hub - Contact Us</title>
+    <link rel="stylesheet" href="/css/global.css">
+</head>
+<body class="center-container">
+    <div class="card-form">
+        <header class="text-center" style="margin-bottom: 30px;">
+            <h1 style="font-size: 24px; color: var(--linkedin-blue);">Contact Us</h1>
+            <p class="text-medium" style="margin-top: 5px;">We're here to help you connect and grow.</p>
+        </header>
+
+        <form class="contact-form">
+            <div style="display: flex; gap: 20px;">
+                <div style="flex: 1;">
+                    <label for="firstName">First Name</label>
+                    <input id="firstName" name="firstName" placeholder="Your first name" type="text">
+                </div>
+                <div style="flex: 1;">
+                    <label for="lastName">Last Name</label>
+                    <input id="lastName" name="lastName" placeholder="Your last name" type="text">
+                </div>
+            </div>
+
+            <label for="email">Email Address</label>
+            <input id="email" name="email" placeholder="you@example.com" type="email">
+
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject">
+                <option disabled selected value="">Select a subject</option>
+                <option value="General Inquiry">General Inquiry</option>
+                <option value="Technical Support">Technical Support</option>
+                <option value="Employer Partnership">Employer Partnership</option>
+                <option value="Media Inquiry">Media Inquiry</option>
+            </select>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Type your message here..." rows="5"></textarea>
+
+            <button class="btn btn-primary" type="submit">Send Message</button>
+        </form>
+
+        <div class="text-center margin-top-large">
+            <p class="text-medium">Or call us at +1 (555) 123-4567</p>
+        </div>
+    </div>
+</body>
+</html>

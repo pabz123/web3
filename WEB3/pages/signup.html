@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  
+  <title>Career Connect Hub - Sign Up</title>
+  <style>
+    body {
+font-family: "Public Sans", sans-serif;
+background-color: #2f343d; /* Light-Medium Grey (like your sample) */
+color: #333;
+display: flex;
+justify-content: center;
+align-items: center;
+ height: 100vh;
+margin: 0;
+}
+
+    .container {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      padding: 40px;
+      width: 400px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #1392ec;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #777;
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, select, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+      width: 100%;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #1392ec;
+      outline: none;
+      box-shadow: 0 0 0 2px #1392ec22;
+    }
+
+    button {
+      background: #1392ec;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #0d7cd6;
+    }
+
+    .link {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .link a {
+      color: #1392ec;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .link a:hover {
+      text-decoration: underline;
+    }
+
+    #employerFields {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Join Career Connect Hub</h2>
+    <p>Create your account to get started</p>
+
+    <form id="registerForm">
+      <input type="text" id="username" name="username" placeholder="Full Name" required />
+      <input type="email" id="email" name="email" placeholder="Email Address" required />
+      <input type="password" id="password" name="password" placeholder="Password" required />
+
+      <select id="role" name="role" required>
+        <option value="">Select Role</option>
+        <option value="student">Student</option>
+        <option value="employer">Employer</option>
+      </select>
+
+      <div id="employerFields">
+        <input type="text" id="company_name" name="company_name" placeholder="Company Name" />
+        <input type="text" id="company_type" name="company_type" placeholder="Company Type" />
+        <input type="text" id="industry" name="industry" placeholder="Industry" />
+        <textarea id="company_description" name="company_description" placeholder="Company Description"></textarea>
+      </div>
+
+      <button type="submit">Sign Up</button>
+
+      <div class="link">
+        Already have an account? <a href="login.html">Sign in</a>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const roleSelect = document.getElementById("role");
+    const employerFields = document.getElementById("employerFields");
+
+    roleSelect.addEventListener("change", () => {
+      employerFields.style.display = roleSelect.value === "employer" ? "block" : "none";
+    });
+
+    document.getElementById("registerForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const data = {
+        username: document.getElementById("username").value.trim(),
+        email: document.getElementById("email").value.trim(),
+        password: document.getElementById("password").value.trim(),
+        role: document.getElementById("role").value,
+        company_name: document.getElementById("company_name").value.trim(),
+        company_type: document.getElementById("company_type").value.trim(),
+        industry: document.getElementById("industry").value.trim(),
+        company_description: document.getElementById("company_description").value.trim(),
+      };
+
+      try {
+        const res = await fetch("http://localhost:5000/auth/register", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        });
+
+        const result = await res.json();
+
+        if (res.ok) {
+          alert("Registration successful! Redirecting to login...");
+          window.location.href = "login.html";
+        } else {
+          alert(result.error || "Registration failed.");
+        }
+      } catch (err) {
+        console.error(err);
+        alert("Server error. Please try again later.");
+      }
+    });
+  </script>
+</body>
+</html>

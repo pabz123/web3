@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="/css/global.css">
+<link rel="stylesheet" href="/css/layout.css">
+ 
+  
+
+
+<title>Career Connect Hub - Login</title>
+<style>
+
+body {
+font-family: "Public Sans", sans-serif;
+background-color: #2f343d; /* Light-Medium Grey (like your sample) */
+color: #333;
+display: flex;
+justify-content: center;
+align-items: center;
+ height: 100vh;
+margin: 0;
+}
+/* ... rest of your CSS remains the same ... */
+
+.container {
+ background: white;
+ border-radius: 10px;
+box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+padding: 40px;
+ width: 400px;
+text-align: center;
+}
+
+h2 {
+color: #1392ec;
+ margin-bottom: 10px;
+ }
+
+p {
+color: #777;
+ font-size: 14px;
+ margin-bottom: 25px;
+ }
+
+ form {
+display: flex;
+flex-direction: column;
+/* REMOVED: gap: 15px; */
+}
+
+input, select {
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 6px;
+font-size: 14px;
+width: 100%;
+margin-bottom: 15px;
+ }
+
+input:focus, select:focus {
+border-color: #1392ec;
+outline: none;
+ box-shadow: 0 0 0 2px #1392ec22;
+}
+
+ /* The button will now occupy 100% of the form's width and is aligned correctly. */
+button {
+background: #1392ec;
+color: white;
+border: none;
+padding: 12px;
+border-radius: 6px;
+cursor: pointer;
+font-weight: bold;
+transition: 0.3s;
+width: 100%; /* Ensuring it takes full width, though it should by default in the flex column */
+margin-bottom: 0;/* Resetting any potential margin-bottom from previous rule if it applied */
+ }
+
+button:hover {
+background: #0d7cd6;
+ }
+
+.link {
+margin-top: 15px;
+ font-size: 14px;
+ }
+
+ .link a {
+color: #1392ec;
+text-decoration: none;
+ font-weight: 500;
+ }
+ .link a:hover {
+text-decoration: underline;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<h2>Welcome Back!</h2>
+<p>Sign in to continue your journey</p>
+
+<form id="loginForm">
+ <input type="email" id="email" name="email" placeholder="Email Address" required />
+ <input type="password" id="password" name="password" placeholder="Password" required />
+<select id="role" name="role" required>
+<option value="">Select Role</option>
+<option value="student">Student</option>
+<option value="employer">Employer</option>
+</select>
+
+<button type="submit">Sign In</button>
+
+<div class="link">
+Don't have an account? <a href="signup.html">Sign Up</a>
+</div>
+</form>
+ </div>
+ <script>
+    document.getElementById("loginForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const data = {
+        email: document.getElementById("email").value.trim(),
+        password: document.getElementById("password").value.trim(),
+        role: document.getElementById("role").value,
+      };
+
+      try {
+        const res = await fetch("http://localhost:5000/auth/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        });
+
+        const result = await res.json();
+
+        if (res.ok) {
+          alert("Login successful!");
+          if (result.user.role === "student") {
+            window.location.href = "student.html";
+          } else if (result.user.role === "employer") {
+            window.location.href = "employer.html";
+          }
+        } else {
+          alert(result.error || "Login failed.");
+        }
+      } catch (err) {
+        console.error(err);
+        alert("Server error. Please try again later.");
+      }
+    });
+  </script>
+</body>
+</html>
