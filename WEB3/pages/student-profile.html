@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Profile</title>
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/student-profile.css">
+</head>
+
+<body class="student-page">
+  <header class="main-header">
+    <nav class="nav-bar">
+       <a class="logo" href="home.html">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2.2">
+        <circle cx="32" cy="32" r="30" stroke="#0a66c2"/>
+        <rect x="18" y="28" width="28" height="18" rx="3" ry="3" stroke="#0a66c2"/>
+        <path d="M24 28v-4h16v4" stroke="#0a66c2"/>
+        <path d="M32 12l14 6-14 6-14-6 14-6z" stroke="#0a66c2"/>
+        <path d="M32 24v4" stroke="#0a66c2"/>
+      </svg>
+      <span class="logo-text">CaReeR CoNNect HuB</span>
+    </a>
+
+      <div class="nav-links">
+        <a href="student.html">Dashboard</a>
+        <a href="jobs.html">Jobs</a>
+        <a href="cv.html">CVs</a>
+        <a href="student-profile.html" style="color: var(--linkedin-blue);">Profile</a>
+      </div>
+
+      <div class="header-actions">
+        <img id="profile-pic-small" src="/uploads/default-avatar.png" alt="Profile" class="profile-avatar-small">
+        <button id="logout-btn" class="btn btn-secondary small-btn">Logout</button>
+		<button id="theme-toggle" class="btn btn-secondary small-btn">🌙 Light Mode</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="profile-container">
+    <h1>My Profile</h1>
+
+    <!-- Profile Completion -->
+    <div class="progress-section">
+      <label>Profile Completion:</label>
+      <div class="progress-bar">
+        <div id="completion-fill" class="progress-fill" style="width: 0%;"></div>
+      </div>
+      <span id="completion-text">0%</span>
+    </div>
+
+    <!-- Profile Form -->
+    <form id="profileForm" enctype="multipart/form-data">
+      <div class="form-grid">
+        <div>
+          <label>Full Name:</label>
+          <input type="text" name="fullName" id="fullName" required>
+
+          <label>Email:</label>
+          <input type="email" name="email" id="email" required>
+
+          <label>Phone:</label>
+          <input type="text" name="phone" id="phone">
+
+          <label>Education Level:</label>
+          <select id="education" name="education">
+            <option value="">Select</option>
+            <option value="Diploma">Diploma</option>
+            <option value="Undergraduate">Undergraduate</option>
+            <option value="Postgraduate">Postgraduate</option>
+          </select>
+
+          <label>Skills:</label>
+          <textarea id="skills" name="skills" placeholder="e.g., JavaScript, Python, UI/UX Design"></textarea>
+        </div>
+
+        <!-- Upload Area -->
+        <div class="upload-section">
+          <div class="profile-pic-wrapper">
+            <img id="profilePreview" src="/uploads/default-avatar.png" alt="Profile Picture" />
+            <input type="file" id="profilePic" name="profilePic" accept="image/*">
+          </div>
+
+          <label>Upload CV (PDF):</label>
+          <input type="file" id="cvFile" name="cvFile" accept=".pdf">
+
+          <button type="submit" class="btn btn-primary">Save Profile</button>
+        </div>
+      </div>
+    </form>
+  </main>
+   <footer class="footer">
+<div class="page-content-wrapper footer-content">
+<p>© 2025 CaReeR CoNNect HuB. All rights reserved.</p>
+<div class="footer-social">
+ <span> For more info </span>
+  <!-- Instagram -->
+  <a href="https://www.instagram.com/my.preciouspabz" target="_blank" aria-label="Instagram" class="social-link">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+      <circle cx="17.5" cy="6.5" r="1.5"/>
+    </svg>
+  </a>
+
+  <!-- GitHub -->
+  <a href="https://github.com/pabz123" target="_blank" aria-label="GitHub" class="social-link">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path d="M9 19c-4.5 1.5-4.5-2.5-6-3m12 5v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 18 2.77 5.07 5.07 0 0 0 17.91 0S16.73.35 14 2.48a13.38 13.38 0 0 0-8 0C3.27.35 2.09 0 2.09 0A5.07 5.07 0 0 0 2 2.77 5.44 5.44 0 0 0 .5 8.5c0 5.42 3.3 6.61 6.44 7a3.37 3.37 0 0 0-.94 2.61V21"/>
+    </svg>
+  </a>
+
+  <!-- LinkedIn -->
+  <a href="https://www.linkedin.com/in/pabz" target="_blank" aria-label="LinkedIn" class="social-link">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2h-1v9h-4v-9h-4v9H3V9h4v1.2a4.6 4.6 0 0 1 4-2.2z"/>
+      <rect x="2" y="9" width="4" height="12"/>
+      <circle cx="4" cy="4" r="2"/>
+    </svg>
+  </a>
+</div>
+
+</div>
+</footer>
+  
+  
+
+  <script src="/js/student-profile.js"></script>
+</body>
+</html>

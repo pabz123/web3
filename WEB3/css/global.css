@@ -343,3 +343,837 @@ input:focus, select:focus, textarea:focus {
         margin-top: 0;
     }
 }
+/* === 9. Light Theme Overrides === */
+.light-theme {
+    --background-color: #ffffff;
+    --card-background: #f5f5f5;
+    --text-dark: #1a1a1a;
+    --text-medium: #333333;
+    --border-color: #d1d5db;
+    --linkedin-blue: #0a66c2;
+    --primary-hover: #004182;
+}
+
+/* Optional: Smooth transition when toggling */
+body, header, .card-form, .article-card, .job-card, .footer {
+    transition: background-color 0.3s, color 0.3s;
+}
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.icon-wrapper svg {
+  color: var(--linkedin-blue);
+  transition: transform 0.2s, color 0.3s;
+}
+
+.feature-card:hover .icon-wrapper svg {
+  transform: scale(1.1);
+  color: var(--primary-hover);
+}
+/* Center container for login/signup pages */
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px); /* minus header height */
+  padding: 20px;
+}
+
+/* Card-style form (for login & signup) */
+.card-form.login-form {
+  background-color: var(--card-background);
+  border-radius: 10px;
+  padding: 32px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.card-form.login-form h2 {
+  margin-bottom: 10px;
+  color: var(--text-dark);
+}
+
+.card-form.login-form p {
+  margin-bottom: 20px;
+  color: var(--text-medium);
+  font-size: 0.95rem;
+}
+
+.card-form.login-form input,
+.card-form.login-form select {
+  margin-bottom: 16px;
+  background-color: #444b55;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-dark);
+}
+
+.card-form.login-form button {
+  margin-top: 10px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo svg {
+  transition: transform 0.3s, stroke 0.3s;
+}
+
+.logo:hover svg {
+  transform: scale(1.05);
+  stroke: var(--primary-hover);
+}
+
+.logo-text {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--text-dark);
+}
+
+.light-theme .logo-text {
+  color: var(--text-dark);
+}
+/* --- Layout for centered form pages (signup/login) --- */
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px); /* full height minus header */
+  padding: 20px;
+}
+
+/* Card-style form container */
+.card-form {
+  background-color: var(--card-background, #1e1e1e);
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Input and select fields */
+.card-form input,
+.card-form select,
+.card-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color, #ccc);
+  background-color: #2c2f36;
+  color: var(--text-dark, #fff);
+  font-size: 0.95rem;
+}
+
+/* Center links and button */
+.card-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--linkedin-blue, #0a66c2);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.card-form button:hover {
+  background-color: var(--primary-hover, #004182);
+}
+
+/* --- Keep navigation bar fixed at the top --- */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: var(--card-background, #121212);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+/* Add top padding to body so content doesn’t hide behind navbar */
+body {
+  margin: 0;
+  padding-top: 80px; /* Adjust if your header is taller */
+}
+.light-theme .card-form {
+  background-color: #ffffff;
+  color: #1a1a1a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.light-theme .card-form input,
+.light-theme .card-form select,
+.light-theme .card-form textarea {
+  background-color: #f5f5f5;
+  color: #000;
+  border-color: #ddd;
+}
+.footer-social {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.social-link svg {
+  stroke: var(--linkedin-blue);
+  transition: transform 0.3s, stroke 0.3s;
+}
+
+.social-link:hover svg {
+  transform: scale(1.1);
+  stroke: var(--primary-hover);
+}
+
+/* Light mode adaptation */
+.light-theme .social-link svg {
+  stroke: #0a66c2;
+}
+.job-main-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        @media (min-width: 900px) {
+            .job-main-layout {
+                grid-template-columns: 350px 1fr;
+            }
+        }
+        .filter-panel {
+            background-color: var(--card-background);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            height: fit-content;
+        }
+        .filter-group h4 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 5px;
+        }
+        .job-list-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        @media (min-width: 1200px) {
+            .job-list-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .job-list {
+            height: 80vh;
+            overflow-y: auto;
+        }
+        .job-card {
+            padding: 15px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-bottom: 10px;
+        }
+        .job-card:hover {
+            background-color: var(--background-color);
+        }
+        .job-card.active {
+            border: 2px solid var(--linkedin-blue);
+            background-color: var(--background-color);
+        }
+        .job-details-panel {
+            background-color: var(--card-background);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            height: 80vh;
+            overflow-y: auto;
+            position: sticky;
+            top: 20px;
+        }
+  .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px 0;
+        }
+        .article-image {
+            width: 100%;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .article-content h2, .article-content h3 {
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        .check-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        .check-list li {
+            background-color: var(--card-background);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        .check-icon {
+            color: var(--linkedin-blue);
+            font-size: 24px;
+            line-height: 1;
+        }
+        /* Custom checkmark icon using CSS content property */
+        .check-icon::before {
+            content: "✓";
+            font-weight: 900;
+        }
+		
+.article-video {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 30px auto;
+  position: relative;
+}
+
+/* Container keeps 16:9 ratio and responsiveness */
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Video frame */
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+}
+
+/* Overlay text styling */
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards 1s;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.video-overlay h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
+.video-overlay p {
+  font-size: 1rem;
+  max-width: 600px;
+  line-height: 1.5;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .video-overlay h2 {
+    font-size: 1.3rem;
+  }
+  .video-overlay p {
+    font-size: 0.9rem;
+  }
+}
+/* ======= GLOBAL NAVIGATION BAR ======= */
+.main-header {
+  width: 100%;
+  background-color: var(--card-background, #fff);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-bar {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--linkedin-blue, #0a66c2);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.logo-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0a66c2;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-dark, #333);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  color: var(--linkedin-blue, #0a66c2);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn {
+  cursor: pointer;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.btn-secondary {
+  background-color: #f3f2ef;
+  color: #333;
+}
+
+.btn-secondary:hover {
+  background-color: #e0dfdc;
+}
+
+.small-btn {
+  font-size: 0.9rem;
+  padding: 6px 10px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .nav-bar {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 10px;
+  }
+  .header-actions {
+    margin-top: 10px;
+  }
+}
+
+
+/* ======================================================
+   CAREER CONNECT HUB — GLOBAL STYLES (Unified & Optimized)
+   ====================================================== */
+
+/* === 1. CSS VARIABLES === */
+:root {
+  --linkedin-blue: #0a66c2;
+  --primary-hover: #004182;
+  --background-color: #2f343d;
+  --card-background: #3a3f47;
+  --text-dark: rgba(255, 255, 255, 0.92);
+  --text-medium: rgba(255, 255, 255, 0.7);
+  --border-color: #474d57;
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* === 2. BASE STYLES === */
+body {
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-dark);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  line-height: 1.6;
+  transition: background-color 0.3s, color 0.3s;
+  padding-top: 80px; /* Prevent content hiding under fixed header */
+}
+
+h1, h2, h3, h4 {
+  color: var(--text-dark);
+  line-height: 1.25;
+  margin-top: 0;
+}
+
+a {
+  color: var(--linkedin-blue);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+/* === 3. LAYOUT STRUCTURE === */
+.site-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page-content-wrapper {
+  max-width: 1128px;
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+}
+
+.main-content {
+  flex-grow: 1;
+}
+
+/* === 4. HEADER / NAVBAR (Unified for all pages) === */
+header {
+  background-color: var(--card-background);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 24px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo svg {
+  width: 40px;
+  height: 40px;
+  stroke: var(--linkedin-blue);
+  transition: transform 0.3s, stroke 0.3s;
+}
+
+.logo:hover svg {
+  transform: scale(1.05);
+  stroke: var(--primary-hover);
+}
+
+.logo-text {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: var(--text-medium);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--linkedin-blue);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* === 5. BUTTONS === */
+.btn {
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 500;
+  border: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary {
+  background-color: var(--linkedin-blue);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 1px solid var(--linkedin-blue);
+  color: var(--linkedin-blue);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(10, 102, 194, 0.1);
+}
+
+/* === 6. INPUTS & FORMS === */
+input, select, textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: var(--text-dark);
+  background-color: #444b55;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--linkedin-blue);
+  box-shadow: 0 0 0 1px var(--linkedin-blue);
+  outline: none;
+}
+
+/* === 7. CARDS & CONTAINERS === */
+.card-form, .article-card, .job-card {
+  background: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.card-form:hover, .article-card:hover, .job-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* === 8. GRID SYSTEM === */
+.grid-3-col {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .grid-3-col {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* === 9. FOOTER === */
+.footer {
+  border-top: 1px solid var(--border-color);
+  background-color: var(--card-background);
+  padding: 20px 0;
+  margin-top: 40px;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.footer-content p {
+  font-size: 0.9rem;
+  color: var(--text-medium);
+}
+
+.footer-social {
+  display: flex;
+  gap: 20px;
+}
+
+.social-link svg {
+  stroke: var(--linkedin-blue);
+  transition: transform 0.3s, stroke 0.3s;
+}
+
+.social-link:hover svg {
+  transform: scale(1.1);
+  stroke: var(--primary-hover);
+}
+
+/* === 10. LIGHT THEME === */
+.light-theme {
+  --background-color: #ffffff;
+  --card-background: #f5f5f5;
+  --text-dark: #1a1a1a;
+  --text-medium: #333333;
+  --border-color: #d1d5db;
+}
+
+.light-theme header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.light-theme .logo-text {
+  color: #1a1a1a;
+}
+
+.light-theme .btn-secondary {
+  border-color: var(--linkedin-blue);
+  color: var(--linkedin-blue);
+}
+
+.light-theme .footer {
+  background-color: #f5f5f5;
+}
+
+.light-theme input,
+.light-theme select,
+.light-theme textarea {
+  background-color: #f5f5f5;
+  color: #000;
+  border-color: #ddd;
+}
+/* === NAVBAR USER PROFILE SECTION === */
+.nav-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.nav-user img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--linkedin-blue);
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.3s;
+}
+
+.nav-user img:hover {
+  transform: scale(1.05);
+  border-color: var(--primary-hover);
+}
+
+.nav-username {
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+/* === PROFILE DROPDOWN === */
+.profile-dropdown {
+  display: none;
+  position: absolute;
+  top: 48px;
+  right: 0;
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  min-width: 160px;
+  z-index: 999;
+  padding: 10px 0;
+}
+
+.profile-dropdown a {
+  display: block;
+  padding: 10px 16px;
+  color: var(--text-medium);
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.profile-dropdown a:hover {
+  background-color: rgba(10, 102, 194, 0.1);
+  color: var(--text-dark);
+}
+
+/* Active (Visible) state */
+.nav-user.active .profile-dropdown {
+  display: block;
+}
+
+/* Light theme adjustments */
+.light-theme .profile-dropdown {
+  background-color: #fff;
+  border-color: #ddd;
+}
+
+.light-theme .nav-username {
+  color: #1a1a1a;
+}

@@ -4,156 +4,143 @@
 <meta charset="UTF-8" />
  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="stylesheet" href="/css/global.css">
-<link rel="stylesheet" href="/css/layout.css">
- 
-  
-
-
 <title>Career Connect Hub - Login</title>
-<style>
 
-body {
-font-family: "Public Sans", sans-serif;
-background-color: #2f343d; /* Light-Medium Grey (like your sample) */
-color: #333;
-display: flex;
-justify-content: center;
-align-items: center;
- height: 100vh;
-margin: 0;
-}
-/* ... rest of your CSS remains the same ... */
-
-.container {
- background: white;
- border-radius: 10px;
-box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-padding: 40px;
- width: 400px;
-text-align: center;
-}
-
-h2 {
-color: #1392ec;
- margin-bottom: 10px;
- }
-
-p {
-color: #777;
- font-size: 14px;
- margin-bottom: 25px;
- }
-
- form {
-display: flex;
-flex-direction: column;
-/* REMOVED: gap: 15px; */
-}
-
-input, select {
-padding: 10px;
-border: 1px solid #ccc;
-border-radius: 6px;
-font-size: 14px;
-width: 100%;
-margin-bottom: 15px;
- }
-
-input:focus, select:focus {
-border-color: #1392ec;
-outline: none;
- box-shadow: 0 0 0 2px #1392ec22;
-}
-
- /* The button will now occupy 100% of the form's width and is aligned correctly. */
-button {
-background: #1392ec;
-color: white;
-border: none;
-padding: 12px;
-border-radius: 6px;
-cursor: pointer;
-font-weight: bold;
-transition: 0.3s;
-width: 100%; /* Ensuring it takes full width, though it should by default in the flex column */
-margin-bottom: 0;/* Resetting any potential margin-bottom from previous rule if it applied */
- }
-
-button:hover {
-background: #0d7cd6;
- }
-
-.link {
-margin-top: 15px;
- font-size: 14px;
- }
-
- .link a {
-color: #1392ec;
-text-decoration: none;
- font-weight: 500;
- }
- .link a:hover {
-text-decoration: underline;
-}
-</style>
 </head>
 <body>
+<header>
+  <nav class="page-content-wrapper header-nav">
+    <a class="logo" href="home.html">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2.2">
+    <circle cx="32" cy="32" r="30" stroke="#0a66c2"/>
+    <rect x="18" y="28" width="28" height="18" rx="3" ry="3" stroke="#0a66c2"/>
+    <path d="M24 28v-4h16v4" stroke="#0a66c2"/>
+    <path d="M32 12l14 6-14 6-14-6 14-6z" stroke="#0a66c2"/>
+    <path d="M32 24v4" stroke="#0a66c2"/>
+  </svg>
+  <span class="logo-text">CaReeR CoNNect HuB</span>
+</a>
 
-<div class="container">
-<h2>Welcome Back!</h2>
-<p>Sign in to continue your journey</p>
+    <div class="nav-links">
+      <a href="home.html">Home</a>
+	  <a href="opportunities.html">Opportunities</a>
+      <a href="contact.html">Contact</a>
+      <a href="signup.html">Signup</a>
+    </div>
 
-<form id="loginForm">
- <input type="email" id="email" name="email" placeholder="Email Address" required />
- <input type="password" id="password" name="password" placeholder="Password" required />
-<select id="role" name="role" required>
-<option value="">Select Role</option>
-<option value="student">Student</option>
-<option value="employer">Employer</option>
-</select>
+    <div class="header-actions">
+      <a class="btn btn-primary" href="signup.html">Sign Up</a>
+      <button id="theme-toggle" class="btn btn-secondary">🌙 Light Mode</button>
+    </div>
+  </nav>
+</header>
 
-<button type="submit">Sign In</button>
+<main class="center-container">
+  <div class="card-form login-form">
+    <h2>Welcome Back!</h2>
+    <p>Sign in to continue your journey</p>
 
-<div class="link">
-Don't have an account? <a href="signup.html">Sign Up</a>
+    <form id="loginForm">
+      <input type="email" id="email" name="email" placeholder="Email Address" required />
+      <input type="password" id="password" name="password" placeholder="Password" required />
+      <select id="role" name="role" required>
+        <option value="">Select Role</option>
+        <option value="student">Student</option>
+        <option value="employer">Employer</option>
+      </select>
+
+      <button type="submit" class="btn btn-primary" style="width:100%;">Sign In</button>
+
+      <div class="link" style="text-align:center;margin-top:10px;">
+        Don't have an account? <a href="signup.html">Sign Up</a>
+      </div>
+    </form>
+  </div>
+</main>
+<footer class="footer">
+<div class="page-content-wrapper footer-content">
+<p>© 2025 CaReeR CoNNect HuB. All rights reserved.</p>
+<div class="footer-social">
+ <span> For more info </span>
+  <!-- Instagram -->
+  <a href="https://www.instagram.com/YOUR_USERNAME" target="_blank" aria-label="Instagram" class="social-link">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+      <circle cx="17.5" cy="6.5" r="1.5"/>
+    </svg>
+  </a>
+
+  <!-- GitHub -->
+  <a href="https://github.com/YOUR_USERNAME" target="_blank" aria-label="GitHub" class="social-link">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path d="M9 19c-4.5 1.5-4.5-2.5-6-3m12 5v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 18 2.77 5.07 5.07 0 0 0 17.91 0S16.73.35 14 2.48a13.38 13.38 0 0 0-8 0C3.27.35 2.09 0 2.09 0A5.07 5.07 0 0 0 2 2.77 5.44 5.44 0 0 0 .5 8.5c0 5.42 3.3 6.61 6.44 7a3.37 3.37 0 0 0-.94 2.61V21"/>
+    </svg>
+  </a>
+
+  <!-- LinkedIn -->
+  <a href="https://www.linkedin.com/in/YOUR_USERNAME" target="_blank" aria-label="LinkedIn" class="social-link">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2h-1v9h-4v-9h-4v9H3V9h4v1.2a4.6 4.6 0 0 1 4-2.2z"/>
+      <rect x="2" y="9" width="4" height="12"/>
+      <circle cx="4" cy="4" r="2"/>
+    </svg>
+  </a>
 </div>
-</form>
- </div>
- <script>
-    document.getElementById("loginForm").addEventListener("submit", async (e) => {
-      e.preventDefault();
 
-      const data = {
-        email: document.getElementById("email").value.trim(),
-        password: document.getElementById("password").value.trim(),
-        role: document.getElementById("role").value,
-      };
+</div>
+</footer>
 
-      try {
-        const res = await fetch("http://localhost:5000/auth/login", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data)
-        });
+<script>
+  // Login logic
+  document.getElementById("loginForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-        const result = await res.json();
+    const data = {
+      email: document.getElementById("email").value.trim(),
+      password: document.getElementById("password").value.trim(),
+      role: document.getElementById("role").value,
+    };
 
-        if (res.ok) {
-          alert("Login successful!");
-          if (result.user.role === "student") {
-            window.location.href = "student.html";
-          } else if (result.user.role === "employer") {
-            window.location.href = "employer.html";
-          }
-        } else {
-          alert(result.error || "Login failed.");
+    try {
+      const res = await fetch("http://localhost:5000/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      });
+
+      const result = await res.json();
+
+      if (res.ok) {
+        alert("Login successful!");
+        if (result.user.role === "student") {
+          window.location.href = "student.html";
+        } else if (result.user.role === "employer") {
+          window.location.href = "employer.html";
         }
-      } catch (err) {
-        console.error(err);
-        alert("Server error. Please try again later.");
+      } else {
+        alert(result.error || "Login failed.");
       }
-    });
-  </script>
+    } catch (err) {
+      console.error(err);
+      alert("Server error. Please try again later.");
+    }
+  });
+
+  // Theme toggle
+  const toggle = document.getElementById('theme-toggle');
+  const body = document.body;
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'light') {
+    body.classList.add('light-theme');
+    toggle.textContent = '🌙 Dark Mode';
+  }
+  toggle.addEventListener('click', () => {
+    const isLight = body.classList.toggle('light-theme');
+    toggle.textContent = isLight ? '🌙 Dark Mode' : '☀️ Light Mode';
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  });
+</script>
 </body>
+
 </html>
