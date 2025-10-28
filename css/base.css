@@ -1,0 +1,8 @@
+
+/* base utilities */
+.hidden{display:none}
+.show{display:block}
+.text-center{text-align:center}
+.mt-2{margin-top:8px}
+.mb-2{margin-bottom:8px}
+.p-4{padding:16px}
